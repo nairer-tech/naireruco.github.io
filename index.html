@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#141e30,#243b55);
+font-family:'Segoe UI',sans-serif;
+}
+
+/* TARJETA */
+.login-box{
+background:white;
+padding:40px;
+border-radius:15px;
+width:300px;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,0.4);
+animation:fadeIn .6s ease;
+}
+
+/* TITULO */
+.login-box h2{
+margin-bottom:20px;
+color:#333;
+}
+
+/* INPUTS */
+.login-box input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ccc;
+outline:none;
+transition:.3s;
+}
+
+.login-box input:focus{
+border-color:#00bfa6;
+box-shadow:0 0 5px rgba(0,191,166,.5);
+}
+
+/* BOTON */
+.login-box button{
+width:100%;
+padding:10px;
+border:none;
+border-radius:8px;
+background:#00bfa6;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.login-box button:hover{
+background:#009e8c;
+transform:scale(1.03);
+}
+
+/* MENSAJE */
+#msg{
+margin-top:15px;
+font-weight:bold;
+}
+
+/* LINK */
+.volver{
+display:block;
+margin-top:20px;
+text-decoration:none;
+color:#00bfa6;
+font-size:14px;
+}
+
+.volver:hover{
+text-decoration:underline;
+}
+
+/* ANIMACION */
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+<h2>Iniciar Sesión</h2>
+
+<input id="usuario" placeholder="Usuario">
+<input id="clave" type="password" placeholder="Contraseña">
+
+<button onclick="login()">Ingresar</button>
+
+<p id="msg"></p>
+
+<a href="../index.html" class="volver">← Volver</a>
+
+</div>
+
+<script>
+function login(){
+let u = document.getElementById("usuario").value;
+let p = document.getElementById("clave").value;
+let msg = document.getElementById("msg");
+
+if(u=="admin" && p=="1234"){
+msg.innerHTML="Acceso correcto";
+msg.style.color="green";
+} else {
+msg.innerHTML="Usuario o contraseña incorrectos";
+msg.style.color="red";
+}
+}
+</script>
+
+</body>
+</html>
